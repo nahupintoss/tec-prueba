@@ -1,0 +1,547 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background: #ffff;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+/** Header **/
+#header{
+    width: 100%;
+    position: center;
+}
+/** Img Header **/
+.img-header{
+    background: url(../imagenes/header.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-color:rgba(0,0,0,0.6);
+    background-blend-mode: soft-light;
+    
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.img-header .header-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+.img-header .header-info h2{
+    color:#fff;
+    font-size: 70px;
+    font-weight: normal;
+}
+.img-header .header-info hr{
+    border:none;
+    outline: none;
+    height: 2px;
+    background: #fff;
+    width: 600px;
+    margin:15px 0px;
+}
+.img-header .header-info p{
+    color:#fff;
+    font-size: 20px;
+}
+
+/** Navegation Menu **/
+.menu{
+    width: 100%;
+    height: 60px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #162dff;
+}
+.menu .btn-menu{display: none;}
+.menu .log-box{margin-left: 50px;}
+.menu .log-box h1{
+    font-weight: normal;
+    font-size:30px;
+    color:#000;
+}
+.menu .list-container{
+    margin-right:10px; transition: 0.5s;
+}
+.menu .list-container .lists{display: flex;}
+.menu .list-container .lists li{list-style: none;}
+.menu .list-container .lists li a{
+    text-decoration: none;
+    color:#000;
+    border-radius: 9px;
+    font-size: 19px;
+    padding: 4px;
+    margin: 15px 20px;
+    transition: 0.3s;
+}
+
+.submenu{
+    position: absolute;
+    bottom: -150px;
+    background: #ffffff;
+	width: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.submenu li a{
+    position: relative;
+    bottom: 0px;
+    display: list-item;
+    color: #fff;
+	text-decoration: none;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+
+.menu .list-container .lists li a.active{
+    background:#162dff;
+    color:#fff;
+}
+.menu .list-container .lists li a:hover{
+    background:#162dff;
+    color:#fff;
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/** Main **/
+#main{
+    width: 100%;
+}
+
+/** nosotros **/
+.nosotros{
+   width: 100%;
+} 
+.nosotros-info{
+    width: 80%;
+    margin:100px auto;
+}
+.nosotros-info h2{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: normal;
+    color:#000;
+}
+.nosotros-info p{
+    font-size: 21px;
+    color:#000;
+    line-height: 40px;
+    margin:30px 0px;
+    text-align: center;
+}
+.nosotros .logo-img{
+    width: 45%;
+    margin:auto;
+}
+.nosotros .logo-img img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transform:rotate(0deg);
+    cursor: pointer;
+}
+
+/** Actividades **/
+.Actividades{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top:100px;
+}
+.Actividades .figure-img{
+    background: url(../imagenes/Actividades.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
+    background-color:rgba(0,0,0,0.5);
+    background-blend-mode: soft-light;
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Actividades .figure-img h4{
+    width: 80%;
+    color:#fff;
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 60px;
+}
+.skew-abajo{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-width: 0 0 5vh 100vw;
+	border-style: solid;
+	border-color: transparent transparent #fff transparent;
+}
+.skew-arriba{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-width: 5vh 100vw 0 0;
+	border-style: solid;
+	border-color: #fff transparent transparent transparent;
+	z-index: 10;
+}
+
+/** Gallery **/
+.gallery-section{
+    width:100%;
+    margin:150px 0px ;
+}
+.gallery-container{
+    width: 80%;
+    margin:auto;
+    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,350px);
+}
+.gallery-container .img-card{
+    overflow:hidden;
+}
+.gallery-container .img-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;   
+    transition: 0.5s; 
+}
+.gallery-container .img-card:hover img{
+    transform: scale(1.5) rotate(30deg);
+}
+
+/** Modal Gallery **/
+.modal-gallery{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,0.9);
+    padding:40px;
+    z-index: 99999;
+    display: none;
+}
+.modal-gallery .close-modal{
+    position: absolute;
+    top:20px;
+    right: 20px;
+    color:#fff;
+    font-size:30px;
+    cursor: pointer;
+}
+.modal-gallery #imgModal{
+    width:60%;
+    margin:auto;
+    display: block;
+    height: 400px;
+    object-fit: cover;
+}
+.modal-gallery .captionModal{
+     color:#fff;
+     display:flex;
+     justify-content: center;
+     font-size:19px;
+     margin:20px 0px;
+}
+.gallery-list{
+    width: 100%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(1,100px);
+}
+.gallery-list img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.gallery-list img:hover{
+    opacity:0.5;
+}
+
+/** Contacto **/ 
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing:border-box;
+  }
+  
+  :focus{
+      outline: none;
+  }
+  
+  /* FORMULARIO =================================== */
+  
+  .form_wrap{
+      width: 1050px;
+      height: 530px;
+      margin: 50px auto;
+      display: flex;
+  
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Informacion de Contacto*/
+  
+  .cantact_info::before{
+      content: '';
+      width: 100%;
+      height: 100%;
+  
+      position: absolute;
+      top: 0;
+      left: 0;
+  
+      background: #999999;
+      opacity: 0.9;
+  }
+  
+  .cantact_info{
+      width: 38%;
+      position: relative;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      background-image: url('');
+      background-size: cover;
+      background-position: center center;
+  
+  }
+  
+  .info_title,
+  .info_items{
+      position: relative;
+      z-index: 2;
+      color: #fff;
+  }
+  
+  .info_title{
+      margin-bottom: 60px;
+  }
+  
+  .info_title span{
+      font-size: 100px;
+      display: block;
+      text-align: center;
+      margin-bottom: 15px;
+  }
+  
+  .info_title h2{
+      font-size: 35px;
+      text-align: center;
+  }
+  
+  .info_items p{
+      display: flex;
+      align-items: center;
+  
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+  }
+  
+  .info_items p:nth-child(1) span{
+      font-size: 40px;
+      margin-right: 10px;
+  }
+  
+  .info_items p:nth-child(2) span{
+      font-size: 50px;
+      margin-right: 15px;
+      margin-left: 4px;
+  }
+  
+  
+  /* Formulario de contacto*/
+  form.form_contact{
+      width: 62%;
+      padding: 30px 40px;
+  }
+  
+  form.form_contact h2{
+      font-size: 25px;
+      font-weight: 600;
+      color: #303030;
+      margin-bottom: 30px;
+  }
+  
+  form.form_contact .user_info{
+      display: flex;
+      flex-direction: column;
+  }
+  
+  form.form_contact label{
+      font-weight: 600;
+  }
+  
+  form.form_contact input,
+  form.form_contact textarea{
+      width: 100%;
+      padding: 8px 0px 5px;
+      margin-bottom: 20px;
+  
+      border: none;
+      border-bottom: 2px solid #D1D1D1;
+  
+      font-family: sans-serif;
+      color: #5A5A5A;
+      font-size: 14px;
+      font-weight: 400;
+  }
+  
+  form.form_contact textarea{
+      max-width: 100%;
+      min-width: 100%;
+      max-height: 90px;
+  }
+  
+  form.form_contact input[type="submit"]{
+      width: 180px;
+      background: #4091EC;
+      padding: 10px;
+      border: none;
+      border-radius: 25px;
+  
+      align-self: flex-end;
+  
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+  }
+  
+  form.form_contact input[type="submit"]:hover{
+      background: #3371B6;
+  }
+  
+  /* Ventana de errores*/
+  .modal_wrap{
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.7);
+  
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 3;
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .mensaje_modal{
+      background: #fff;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+      width: 400px;
+      padding: 30px 20px 15px;
+  }
+  
+  .mensaje_modal h3{
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+  }
+  
+  .mensaje_modal h3:after{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #C5C5C5;
+      margin: 10px 0px 15px;
+  }
+  
+  .mensaje_modal p{
+      font-size: 16px;
+      color: #606060;
+  }
+  
+  .mensaje_modal p:before{
+      content: "\f00d";
+      font-family: sans-serif;
+      display: inline-block;
+      color: #E25151;
+      margin-right: 8px;
+  }
+  
+  #btnClose{
+      display: inline-block;
+      padding: 3px 10px;
+      margin-top: 10px;
+  
+      background: #E25151;
+      color: #fff;
+      border: 2px solid #B14141;
+      cursor: pointer;
+  
+      float: none;
+  }
+
+/** Footer **/
+#footer{
+    width:100%;
+    height: 200px;
+    background:rgb(192, 192, 192);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+#footer p{
+    position: relative;
+    bottom: -65px;
+    color:rgb(114, 114, 114);
+    font-size:19px;
+}
+.redes {
+    text-align: center;
+    padding-top: 40px;
+    position: relative;
+    bottom: -150px;
+    padding-bottom: -300px;
+}
+.redes li{
+    display: inline-block;
+}
